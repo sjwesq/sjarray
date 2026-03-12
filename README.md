@@ -22,7 +22,9 @@ int64_t_ArrSet(my_array, 5, 256);
 ```
 
 There is a demonstrable performance impact for this type of bounds checking
-(around 1.3x~1.5x,) so there is a non-insignificant trade-off for this type of safety.
+(around 1.3x~1.5x,) so there is a non-insignificant trade-off for this type of
+safety. Of course, the compiler is just as likely to optimize the performance
+impact out depending on your use case.
 
 As of now, the header simply `abort()`s on an out-of-bounds error, for lack of a
 more robust error handling system, and with the belief that "Crash Early" is an
