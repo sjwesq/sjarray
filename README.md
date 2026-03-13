@@ -21,6 +21,9 @@ int64_t_ArrGet(my_array, 5);
 int64_t_ArrSet(my_array, 5, 256);
 ```
 
+It may be recommended to add your `DefineArray()`s to the header itself, to
+prevent redeclarations that may bloat your executable.
+
 There is a demonstrable performance impact for this type of bounds checking
 (around 1.3x~1.5x,) so there is a non-insignificant trade-off for this type of
 safety. Of course, the compiler is just as likely to optimize the performance
